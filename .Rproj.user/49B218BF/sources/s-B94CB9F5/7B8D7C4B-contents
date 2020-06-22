@@ -1,0 +1,23 @@
+# feature mapping 
+
+library(tidyverse)
+feature_mapping = function(df){
+  new_df = with(df, 
+                data.frame(Age_enrollment = Age_enrollment, 
+                           Onset2enrollment = Onset2enrollment,
+                           Gender = case_when(Gender == "female" ~ 0, 
+                              Gender == "male" ~ 1), 
+                           FVC_slope = (FVC_3mo - FVC_enrollment)/90, 
+                           FVC_mean = (FVC_3mo + FVC_enrollment)/2, 
+                           ALSFRS_slope = (ALSFRS_3mo - ALSFRS_enrollment)/3, 
+                           ALSFRS_mean = (ALSFRS_3mo + ALSFRS_enrollment)/2, 
+                           Onset_limb = case_when(Onset_region == "limb" ~ 1, 
+                                  TRUE ~ 0), 
+                           Onset_bulbar = case_when(Onset_region == "bulbar" ~ 1, 
+                                    TRUE ~ 0), 
+                           Onset_both = case_when(Onset_region == "both" ~ 1, 
+                                    TRUE ~ 0)))
+  new_df
+}
+
+
