@@ -1,0 +1,12 @@
+name: predictALS_prototype
+title: predictALS_prototype
+username:
+account: yoonhohong
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2487100
+bundleId: 3301434
+url: https://yoonhohong.shinyapps.io/predictALS_prototype/
+when: 1592824267.40896
+asMultiple: FALSE
+asStatic: FALSE
